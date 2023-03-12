@@ -34,8 +34,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ##### Використовуючи ReaсtJS (бажано але можна Angular чи будь-який інший фреймворк)
 реалізувати завдання з наступними вимогами:
 ##### 1. Вигляд сторінок має відповідати макету за посиланням нижче:
-https://www.figma.com/file/wsndIMMisT3mRUm59NtW6U/Rick-and-Morty-(web-
-responsive)-(Community)?node-id=0%3A1&amp;t=zXvvbBwrY5qV6cIh-0
+https://www.figma.com/file/wsndIMMisT3mRUm59NtW6U/Rick-and-Morty-(web-responsive)-(Community)?node-id=0%3A1&amp;t=zXvvbBwrY5qV6cIh-0
 ! HTML/SCSS бажано писати власні без використання UI бібліотек.
 ##### 2. Дизайн має бути адаптивний (як на макеті).
 ##### 3. При старті аплікації у користувача має йти запит до API і відмальовуватись
@@ -51,8 +50,7 @@ responsive)-(Community)?node-id=0%3A1&amp;t=zXvvbBwrY5qV6cIh-0
 зберігатись.
 ##### 8. Крім коду обов&#39;язково має бути лінка на задеплоєну аплікацію - інші
 варіанти не будуть розглядатись.
-##### Посилання на макет: https://www.figma.com/file/wsndIMMisT3mRUm59NtW6U/Rick-
-and-Morty-(web-responsive)-(Community)?node-id=0%3A1&amp;t=zXvvbBwrY5qV6cIh-0
+##### Посилання на макет: https://www.figma.com/file/wsndIMMisT3mRUm59NtW6U/Rick-and-Morty-(web-responsive)-(Community)?node-id=0%3A1&amp;t=zXvvbBwrY5qV6cIh-0
 ##### Посилання на API: https://rickandmortyapi.com/documentation
 
 ##### Додаткове завдання:
