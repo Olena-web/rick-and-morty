@@ -18,9 +18,18 @@ constructor(props:  Character) {
 }
   render() {
     return (
+      <>
+      <header>
+        <div className='main-logo'>
+            <img src="./assets/mainlogo.svg" alt="logo" />
+          </div>
+      </header>
       <main>
         <Routes>
-         <Route path="/" element={<CharactersList id={0} name={''} status={''} species={''} type={''} gender={''} origin={{
+          
+         <Route path="/" 
+         
+         element={<CharactersList id={0} name={''} status={''} species={''} type={''} gender={''} origin={{
             name: '',
             url: ''
           }} location={{
@@ -31,6 +40,7 @@ constructor(props:  Character) {
           <Route path={`/character/:id`} element={<CharacterCard   />} />
         </Routes>
       </main>
+      </>
     );
   }
 }
