@@ -31,20 +31,5 @@ export const getEpisodes = async (page: number) => {
     return data;
 }
 
-export const loadFirstPage = async () => {
-    document.addEventListener('DOMContentLoaded', () => {
-        const app = document.getElementById('app');
-        const page = 1;
-        getCharacters(page).then((data) => {
-            console.log(data);
-            data.results.forEach((character: any) => {
-                const div = document.createElement('div');
-                div.innerHTML = `
-                <h1>${character.name}</h1>
-                <img src="${character.image}" alt="${character.name}" />
-            `;
-                app?.appendChild(div);
-            });
-        });
-    });
-}
+
+

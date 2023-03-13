@@ -1,14 +1,21 @@
 //import logo from '../public/logo.svg';
-import './App.css';
-import { CharacterCard } from './CharacterCard/CharacterCard';
-
+import './App.scss';
+import { CharacterCard } from './Components/CharacterCard/CharacterCard';
+import {MainPage} from './Pages/MainPage/MainPage';
 function App() {
   
   return (
     <div className="App" id='app'>
       <header className="App-header">
       </header>
-      <CharacterCard  />
+      <MainPage id={0} name={''} status={''} species={''} type={''} gender={''} origin={{
+        name: '',
+        url: ''
+      }} location={{
+        name: '',
+        url: ''
+      }} image={''} episode={[]} url={''} created={''}/>
+      {/* <CharacterCard  /> */}
     </div>
   );
 }

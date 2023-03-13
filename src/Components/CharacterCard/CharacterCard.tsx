@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import { Character } from '../utility/types';
-import { getCharacter } from '../utility/api';
+import { Character } from '../../utility/types';
+import { getCharacter } from '../../utility/api';
 
 
 export const CharacterCard = () => {
