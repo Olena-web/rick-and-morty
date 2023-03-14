@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 //import { PaginationComponent } from '../Pagination/Pagination';
 //import { JobDetails } from '../JobDetails/JobDetails';
 import { Character } from '../../utility/types';
-import { CharacterCard } from '../../Components/CharacterCard/CharacterCard';
+import { CharacterDetails} from '../../Components/CharacterDetails/CharacterDetails';
 import { CharactersList } from '../../Components/CharacteresList/CharactersList';
 
 
@@ -18,18 +18,11 @@ constructor(props:  Character) {
 }
   render() {
     return (
-      <>
-      <header>
-        <div className='main-logo'>
-            <img src="./assets/mainlogo.svg" alt="logo" />
-          </div>
-      </header>
+      <div >
+      
       <main>
         <Routes>
-          
-         <Route path="/" 
-         
-         element={<CharactersList id={0} name={''} status={''} species={''} type={''} gender={''} origin={{
+         <Route path="/character" element={<CharactersList id={this.props.id} name={''} status={''} species={''} type={''} gender={''} origin={{
             name: '',
             url: ''
           }} location={{
@@ -37,10 +30,16 @@ constructor(props:  Character) {
             url: ''
           }} image={''} episode={[]} url={''} created={''} />} />
           {/* <Route path="*" element={<NotFound />} /> */}
-          <Route path={`/character/:id`} element={<CharacterCard   />} />
+          <Route path={`/character/:id`} element={<CharacterDetails id={this.props.id} name={this.props.name} status={this.props.status} species={''} type={''} gender={''} origin={{
+            name: '',
+            url: ''
+          }} location={{
+            name: '',
+            url: ''
+          }} image={''} episode={[]} url={''} created={''} />} />
         </Routes>
       </main>
-      </>
+      </div>
     );
   }
 }

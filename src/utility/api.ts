@@ -20,7 +20,7 @@ export const getCharacters = async (page: number) => {
 };
 
 export const getCharacter = async (id: number) => {
-    const response = await fetch(Character.replace(':id', id.toString()));
+    const response = await fetch(`${Characters}/${id}`);
     const data = await response.json();
     return data;
 };

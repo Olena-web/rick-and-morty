@@ -1,9 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Character } from '../../utility/types';
-import { getCharacters } from '../../utility/api';
 import { CharacterCard } from '../../Components/CharacterCard/CharacterCard';
+import { getCharacters } from '../../utility/api';
+
 import './CharactersList.scss';
+import { NavLink } from 'react-router-dom';
 
 export const CharactersList = (data: Character) => {
   const [list, setList] = useState<Character[]>([]);
@@ -12,21 +14,25 @@ export const CharactersList = (data: Character) => {
       setList(data['results']);
     });
   }, [list]);
-  
-if (!list) return <div>Loading...</div>;
-    return (
-      <div className="cards-wrapper">
-      {list.map((card: Character) => (
-        <div key={card.id}>
-          <div className="character-card__image">
-                <img src={card.image} alt={card.name} />
-            </div>
-          <p>{card.name}</p>
-          <p>{card.species}</p>
+
+  if (!list) return <div>Loading...</div>;
+  return (
+    <>
+      <header>
+        <div className='main-logo'>
+          <img src="./assets/mainlogo.svg" alt="logo" />
         </div>
-      ))}
-    </div>
-    );
+      </header>
+      <div className="cards-wrapper">
+        {list.map((item, index) => (
+          <div key={index}>
+            <NavLink to={`/character/${item.id}`}>
+              {<CharacterCard {...item} />}
+            </NavLink>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 };
-    
-  
+

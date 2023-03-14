@@ -3,41 +3,33 @@ import {useState, useEffect} from 'react';
 import { Character } from '../../utility/types';
 import { getCharacter } from '../../utility/api';
 
+export const CharacterCard = (props: Character) => {
+    const [character, setCharacter] = useState<Character>(props);
 
-export const CharacterCard = () => {
-    const [character, setCharacter] = useState<Character>();
     useEffect(() => {
-    getCharacter(72).then((data) => {
-        setCharacter(data);
-    });
-   
-},[character] );
-if (!character) return <div>Loading...</div>;
+        getCharacter(props.id).then((data) => {
+            setCharacter(data);
+        });
+    }, [character, props.id]);
+
+    const handleClick = () => {
+        localStorage.setItem('key', props.id.toString());
+    }
+
     return (
-        <div className="character-card">
+        
+        <div className="character-card" onClick={handleClick}>
             <div className="character-card__image">
-                <img src={character.image} alt={character.name} />
+                <img src={props.image} alt={props.name} />
             </div>
             <div className="character-card__info">
-                <h2>{character.name}</h2>
-                <h3>Informations</h3>
+                <h2>{props.name}</h2>
                 <p>
-                    <strong>Gender:</strong> {character.gender}
+                 <strong>Species:</strong> {props.species}
                 </p>
-                <p>
-                    <strong>Status:</strong> {character.status}
-                </p>
-                <p>
-                    <strong>Species:</strong> {character.species}
-                </p>
-                <p>
-                    <strong>Origin:</strong> {character.origin.name}
-                </p>
-                <p>
-                    <strong>Location:</strong> {character.location.name}
-                </p>
-                 
             </div>
         </div>
+            
+           
     );
 };
